@@ -1,16 +1,16 @@
-FROM python:slim
+FROM python:3.10-bullseye
 
 # Install system-level dependencies
-RUN apt-get update && apt-get install -y build-essential portaudio19-dev libffi-dev libssl-dev ffmpeg
+RUN apt-get update && apt-get install -y build-essential portaudio19-dev libffi-dev libssl-dev ffmpeg libpq-dev
 
 WORKDIR /realtime_ai_character
 
 # Install Python dependencies
-COPY requirements.txt /realtime_ai_character
-RUN pip install -r /realtime_ai_character/requirements.txt
+COPY requirements.txt /realtime_ai_character/
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the project files
-COPY ./ /realtime_ai_character
+COPY ./ /realtime_ai_character/
 
 # Expose 8000 port from the docker image.
 EXPOSE 8000
