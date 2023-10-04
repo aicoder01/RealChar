@@ -17,7 +17,7 @@ COPY ./ /realtime_ai_character/
 
 # 复制 Python 依赖项清单并安装它们
 COPY requirements.txt /realtime_ai_character/
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # 使入口脚本可执行
 RUN chmod +x /realtime_ai_character/entrypoint.sh
