@@ -23,7 +23,7 @@ export const getHostName = () => {
   if (!(hostname === 'localhost' || isIP(hostname))) {
     // Remove www. from hostname
     hostname = hostname.replace('www.', '');
-    hostname = 'api.' + hostname;
+    // hostname = 'api.' + hostname;
     newPort = window.location.protocol === 'https:' ? 443 : 80;
   }
   var newHost = hostname + ':' + newPort;
