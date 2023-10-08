@@ -25,8 +25,8 @@ RUN chmod +x /realtime_ai_character/entrypoint.sh
 # 运行构建命令（如果需要）
 RUN python cli.py web-build
 
-# 暴露容器中的 8000 端口
-EXPOSE 8000
+# 暴露容器中的 10000 端口
+EXPOSE 10000
 
 # 运行应用程序的入口脚本
 CMD ["/bin/sh", "/realtime_ai_character/entrypoint.sh"]
