@@ -32,7 +32,7 @@ export function getServerUrl(protocol, host) {
     if (!(hostname === 'localhost' || isIP(hostname))) {
       // Remove www. from hostname
       hostname = hostname.replace('www.', '');
-      hostname = 'api.' + hostname;
+      // hostname = 'api.' + hostname;
       newPort = protocol === 'https:' ? 443 : 80;
     }
   return hostname + ':' + newPort;
